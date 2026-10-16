@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "Cuidali",
+    "slug": "cuidali",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kannali.cuidali"
+    },
+    "android": { "package": "com.kannali.cuidali", "permissions": [] },
+    "extra": { "nativeWatchApp": false }
+  }
+}
