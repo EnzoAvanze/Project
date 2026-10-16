@@ -7,7 +7,7 @@ Execução em 16 de outubro de 2026, Linux, Node.js 24.19.0, npm 11.9.0 e Chromi
 | Verificação                         | Resultado           | Evidência                                                              |
 | ----------------------------------- | ------------------- | ---------------------------------------------------------------------- |
 | `npm run build`                     | Aprovado            | TypeScript e build Vite de produção                                    |
-| `npm test`                          | 11 testes aprovados | Integração HTTP real com Express e SQLite; zero ignorados              |
+| `npm test`                          | 12 testes aprovados | Integração HTTP real com Express e SQLite; zero ignorados              |
 | `npm run test:e2e`                  | 5 testes aprovados  | Chromium, fluxos completos, mobile, relógio/offline e axe              |
 | `npm --prefix mobile run typecheck` | Aprovado            | TypeScript do contêiner React Native/Expo                              |
 | Exportação Metro Android            | Aprovado            | 578 módulos, bundle Hermes gerado; não é APK nem validação em hardware |
@@ -26,6 +26,8 @@ Execução em 16 de outubro de 2026, Linux, Node.js 24.19.0, npm 11.9.0 e Chromi
 9. Origem indevida bloqueada e recuperação sem provedor respondendo explicitamente que não enviou mensagem.
 10. Demonstrações isoladas e alternância somente no próprio grupo.
 11. Exclusão da conta do cuidador preserva as confirmações e pedidos SOS pertencentes ao idoso.
+
+12. Proxy de desenvolvimento Vite com as opções reais do repositório: cadastro, login e sessão por localhost e IP de rede local. Origens de outro domínio, IP, porta e origem nula continuam bloqueadas.
 
 ## Navegador: jornadas executadas
 

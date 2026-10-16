@@ -14,6 +14,12 @@ Variáveis do servidor: `PORT` (3001), `DB_PATH` (`.data/cuidali.sqlite`), `COOK
 
 Para backups consistentes, use a API de backup do SQLite ou pare o servidor antes de copiar o arquivo. Não copie apenas o arquivo principal durante gravações em WAL. Mantenha backups cifrados e com retenção definida.
 
+## Acesso pelo Wi-Fi e erro de origem
+
+Com computador e celular no mesmo Wi-Fi, execute `npm run dev` no computador e abra no celular o endereço exibido pelo Vite como **Network**, na porta 5173. Mantenha o terminal aberto.
+
+Se uma cópia antiga mostrar “Esta solicitação precisa vir do próprio aplicativo”, atualize `vite.config.ts`. O proxy de `/api` deve usar objeto com `target: "http://127.0.0.1:3001"` e **`changeOrigin: false`**. O atalho em string do Vite troca o cabeçalho Host para o endereço interno da API e causa o bloqueio. Após atualizar, pare o comando com Ctrl+C, execute `npm run dev` novamente e recarregue a página no celular. A validação de origem na API continua ativa.
+
 ## Celular
 
 O cliente web é responsivo e tem manifesto PWA e service worker no build. Em um endereço HTTPS, use a opção de instalação do navegador (quando disponível). O service worker guarda somente o shell e arquivos estáticos, nunca respostas da API nem sessões. A primeira abertura exige conexão. Reabrir offline não restaura dados de saúde; os dados da sessão em memória ficam acessíveis enquanto a página permanece aberta.
